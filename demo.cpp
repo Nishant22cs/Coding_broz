@@ -45,7 +45,7 @@ int main() {
         cin >> choice;
         cin.ignore(); // ignore newline character in input buffer
 
-        switch (choice) {
+        switch (choice) {//switch case
             case 1:
                 create_note();
                 break;
