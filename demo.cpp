@@ -55,7 +55,7 @@ int main() {
             case 3:
                 exit(0);
             default:
-                cout << "Invalid choice! Please try again." 
+                cout << "Invalid choice! Please try again." <<endl;
         }
 
         cout << endl; // print newline for formatting
