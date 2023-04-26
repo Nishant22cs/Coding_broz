@@ -6,7 +6,7 @@ using namespace std;
 
 void create_note() {
     string note;
-    cout << "Enter your note:" << endl;
+    cout << "Enter your note:" << endl;//create file
     getline(cin, note);
 
     ofstream fout("notes.txt", ios::app); // open file in append mode
