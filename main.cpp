@@ -66,31 +66,45 @@ void deleteNote()
     else
         cout << "Note deleted successfully\n";
 }
-int main() {
+int main()
+{
     int choice;
-
-    while (true) {
-        cout << "1. Create a note" << endl;
-        cout << "2. View notes" << endl;
-        cout << "3. Exit" << endl;
+    
+    cout << "Simple Notes Manager\n";
+    cout << "---------------------\n";
+    
+    do
+    {
+        cout << "1. Create Note\n";
+        cout << "2. Read Note\n";
+        cout << "3. Update Note\n";
+        cout << "4. Delete Note\n";
+        cout << "5. Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
-        cin.ignore(); // ignore newline character in input buffer
-
-        switch (choice) {
+        
+        switch (choice)
+        {
             case 1:
-                create_note();
+                createNote();
                 break;
             case 2:
-                view_notes();
+                readNote();
                 break;
             case 3:
-                exit(0);
+                updateNote();
+                break;
+            case 4:
+                deleteNote();
+                break;
+            case 5:
+                cout << "Exiting...\n";
+                break;
             default:
-                cout << "Invalid choice! Please try again." <<endl;
+                cout << "Invalid choice\n";
         }
-
-        cout << endl; // print newline for formatting
-    }
+        
+    } while (choice != 5);
+    
     return 0;
 }
