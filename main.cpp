@@ -15,3 +15,20 @@ void create_note() {
 
     cout << "Note created successfully!" << endl;
 }
+void view_notes() {
+    ifstream fin("notes.txt");
+    string note;
+
+    if (fin.peek() == ifstream::traits_type::eof()) { // check if file is empty
+        cout << "No notes found!" << endl;
+        return;
+    }
+
+    cout << "Your notes:" << endl;
+
+    while (getline(fin, note)) {
+        cout << note << endl; // print note to console
+    }
+
+    fin.close();
+}
