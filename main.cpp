@@ -36,22 +36,35 @@ void readNote()
     
     cout << "Note content:\n" << note << endl;
 }
-void view_notes() {
-    ifstream fin("notes.txt");
-    string note;
+void updateNote()
+{
+    fstream file;
+    string filename, note;
+    
+    cout << "Enter file name: ";
+    cin >> filename;
+    cout << "Enter new note content: ";
+    cin.ignore();
+    getline(cin, note);
+    
+    file.open(filename.c_str(), ios::out | ios::trunc);
+    file << note;
+    file.close();
+    
+    cout << "Note updated successfully!\n";
+}
 
-    if (fin.peek() == ifstream::traits_type::eof()) { // check if file is empty
-        cout << "No notes found!" << endl;
-        return;
-    }
-
-    cout << "Your notes:" << endl;
-
-    while (getline(fin, note)) {
-        cout << note << endl; // print note to console
-    }
-
-    fin.close();
+void deleteNote()
+{
+    string filename;
+    
+    cout << "Enter file name: ";
+    cin >> filename;
+    
+    if (remove(filename.c_str()) != 0)
+        cout << "Error deleting note\n";
+    else
+        cout << "Note deleted successfully\n";
 }
 int main() {
     int choice;
