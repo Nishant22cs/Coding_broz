@@ -4,16 +4,37 @@
 
 using namespace std;
 
-void create_note() {
-    string note;
-    cout << "Enter your note:" << endl;//note enter
+void createNote()
+{
+    ofstream fout;
+    string filename, note;
+    
+    cout << "Enter file name: ";
+    cin >> filename;
+    cout << "Enter note content: ";
+    cin.ignore();
     getline(cin, note);
+    
+    fout.open(filename.c_str());
+    fout << note;
+    fout.close();
+    
+    cout << "Note created successfully!\n";
+}
 
-    ofstream fout("notes.txt", ios::app); // open file in append mode
-    fout << note << endl; // write note to file
-    fout.close(); // close file
-
-    cout << "Note created successfully!" << endl;
+void readNote()
+{
+    ifstream fin;
+    string filename, note;
+    
+    cout << "Enter file name: ";
+    cin >> filename;
+    
+    fin.open(filename.c_str());
+    getline(fin, note);
+    fin.close();
+    
+    cout << "Note content:\n" << note << endl;
 }
 void view_notes() {
     ifstream fin("notes.txt");
