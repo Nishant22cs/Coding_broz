@@ -32,3 +32,31 @@ void view_notes() {
 
     fin.close();
 }
+int main() {
+    int choice;
+
+    while (true) {
+        cout << "1. Create a note" << endl;
+        cout << "2. View notes" << endl;
+        cout << "3. Exit" << endl;
+        cout << "Enter your choice: ";
+        cin >> choice;
+        cin.ignore(); // ignore newline character in input buffer
+
+        switch (choice) {
+            case 1:
+                create_note();
+                break;
+            case 2:
+                view_notes();
+                break;
+            case 3:
+                exit(0);
+            default:
+                cout << "Invalid choice! Please try again." <<endl;
+        }
+
+        cout << endl; // print newline for formatting
+    }
+    return 0;
+}
