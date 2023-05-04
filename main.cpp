@@ -69,6 +69,7 @@ void deleteNote()
 int main()
 {
     int choice;
+    cout<<"created by 22cs027,22cs004,22cs049"<<endl;
     
     cout << "Simple Notes Manager\n";
     cout << "---------------------\n";
@@ -80,6 +81,7 @@ int main()
         cout << "3. Update Note\n";
         cout << "4. Delete Note\n";
         cout << "5. Exit\n";
+        cout<<"choice 1,2,3,4,5 any one"<<endl;
         cout << "Enter your choice: ";
         cin >> choice;
         
