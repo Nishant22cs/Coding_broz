@@ -4,6 +4,9 @@
 
 using namespace std;
 
+class NoteManager
+{
+public:
 void createNote()
 {
     ofstream fout;
@@ -66,8 +69,10 @@ void deleteNote()
     else
         cout << "Note deleted successfully\n";
 }
+};
 int main()
-{
+{   
+    NoteManager notes;
     int choice;
     cout<<"created by 22cs027,22cs004,22cs049"<<endl;
     
@@ -88,16 +93,16 @@ int main()
         switch (choice)
         {
             case 1:
-                createNote();
+                notes.createNote();
                 break;
             case 2:
-                readNote();
+                notes.readNote();
                 break;
             case 3:
-                updateNote();
+                notes.updateNote();
                 break;
             case 4:
-                deleteNote();
+                notes.deleteNote();
                 break;
             case 5:
                 cout << "Exiting...\n";
